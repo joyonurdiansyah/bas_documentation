@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sigra\SigraController;
 /*
@@ -17,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// dokumentasi sigra
 Route::get('/sigra/index', [SigraController::class, 'index'])->name('sigra.index');
+
+// dashboard
+Route::get('/dashboard', [DashboardController::class, 'home'])->name('dashboard.index');

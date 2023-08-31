@@ -4,95 +4,134 @@
 @section('title', 'sigra')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h5 class="card-title">MOM</h5>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-primary">
-                                    <span class="widget-49-date-day">09</span>
-                                    <span class="widget-49-date-month">apr</span>
-                                </div>
-                                <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">PRO-08235 DeskOpe. Website</span>
-                                    <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
-                                </div>
-                            </div>
-                            <ol class="widget-49-meeting-points">
-                                <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
-                                <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
-                                <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
-                            </ol>
-                            <div class="widget-49-meeting-action">
-                                <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
-                            </div>
+
+    <section id="step_1" class="full-height px-lg-5">
+        <div class=" text-center" data-aos="fade-up" data-aos-delay="300">
+            <h1>Cari Dokumentasi Anda Disini</h1>
+        </div>
+        <div class="container">
+            <div class="row pb-4" data-aos="fade-up">
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <input id="searchInput" type="text" class="form-control"
+                        placeholder="Cari berdasarkan ID atau nama kartu" aria-label="Search">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="masuklibur" class="col-md-4 mt-4" data-aos="fade-up">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/login sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi Masuk Hari Libur</h4>
+                            <p>Dokumentasi ini berisikan pembuatan data karyawan yang ingin mengajukan masuk shift di hari
+                                libur
+                            </p>
+                            <a href="http://172.21.5.105/" class="link-custom">Baca Dokumentasi</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h5 class="card-title">MOM</h5>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-warning">
-                                    <span class="widget-49-date-day">13</span>
-                                    <span class="widget-49-date-month">apr</span>
-                                </div>
-                                <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">PRO-08235 Lexa Corp.</span>
-                                    <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
-                                </div>
-                            </div>
-                            <ol class="widget-49-meeting-points">
-                                <li class="widget-49-meeting-item"><span>Scheming module is removed</span></li>
-                                <li class="widget-49-meeting-item"><span>App design contract confirmed</span></li>
-                                <li class="widget-49-meeting-item"><span>Client request to send invoice</span></li>
-                            </ol>
-                            <div class="widget-49-meeting-action">
-                                <a href="#" class="btn btn-sm btn-flash-border-warning">View All</a>
-                            </div>
+
+                <div id="eklinik" class="col-md-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi E-Klinik</h4>
+                            <p>Dokumentasi ini menjelaskan terkait karyawan yang ingin melakukan skd pengajuan obat
+                            </p>
+                            <a href="http://172.21.5.105/" class="link-custom">Baca Dokumentasi</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h5 class="card-title">MOM</h5>
+                <div id="masteruser" class="col-md-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi Master User</h4>
+                            <p>Dokumentasi Ini berisikan tentang Role Admin yang dapat mengatur capability user mengelola
+                                sistem
+                            </p>
+                            <a href="http://172.21.5.105/" class="link-custom">Baca Dokumentasi</a>
+                        </div>
                     </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-success">
-                                    <span class="widget-49-date-day">22</span>
-                                    <span class="widget-49-date-month">apr</span>
-                                </div>
-                                <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">PRO-027865 Opera module</span>
-                                    <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
-                                </div>
-                            </div>
-                            <ol class="widget-49-meeting-points">
-                                <li class="widget-49-meeting-item"><span>Scope is revised and updated</span></li>
-                                <li class="widget-49-meeting-item"><span>Time-line has been changed</span></li>
-                                <li class="widget-49-meeting-item"><span>Received approval to start wire-frame</span></li>
-                            </ol>
-                            <div class="widget-49-meeting-action">
-                                <a href="#" class="btn btn-sm btn-flash-border-success">View All</a>
-                            </div>
+                </div>
+                <div id="ecafesedaap" class="col-md-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi E-cafesedaap</h4>
+                            <p>Dokumentasi ini berisikan terkait karyawan mitra kerja yang melakukan tapping makan sesuai
+                                dengan shift
+                            </p>
+                            <a href="http://172.21.5.105/" class="link-custom">Baca Dokumentasi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="edoc" class="col-md-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi E-Doc</h4>
+                            <p>Dokumentasi ini berisikan terkait keluar masuk nya barang atau dokumen
+                            </p>
+                            <a href="http://172.21.5.105/" class="link-custom">Baca Dokumentasi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sigra" class="col-md-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-custom rounded-4 bg-base shadow-effect">
+                        <div class="card-custom-image rounded-4">
+                            <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                alt="">
+                        </div>
+                        <div class="card-custom-content p-3">
+                            <h4>Dokumentasi Sigra</h4>
+                            <p>Dokumentasi ini berisikan tentang pengurusan izin dan pembuatan sertifikasi
+                            </p>
+                            <a href="{{ url('sigra/index') }}" class="link-custom">Baca Dokumentasi</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 @endsection
+
+@push('after-script')
+    <script script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.col-md-4');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const cardTitle = card.querySelector('h4').textContent.toLowerCase();
+
+                if (cardTitle.includes(searchTerm) || card.id.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+@endpush
