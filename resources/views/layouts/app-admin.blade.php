@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Admin</title>
 
-    <title>@yield('title') | Dashboard</title>
+    <title>@yield('title') | Admin</title>
 
     {{-- favicon --}}
     <link rel="apple-touch-icon" href="">
@@ -21,9 +21,9 @@
 </head>
 
 <body>
-
+    @include('includes.sidebar-admin.sidebar')
     @yield('content')
-
+    @include('includes.footer')
     @stack('before-script')
     {{-- script --}}
     @include('includes.script')

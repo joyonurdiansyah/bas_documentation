@@ -21,7 +21,7 @@
                         </path>
                     </svg>
                     <input class="inputBox" id="searchInput" type="text" class="form-control"
-                        placeholder="Cari berdasarkan ID atau nama card" aria-label="Search">
+                        placeholder="Cari berdasarkan nama dokumentasi" aria-label="Search">
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -130,7 +130,7 @@
             max-width: 30rem;
             /* Ubah max-width sesuai kebutuhan */
             /* width: fit-content;
-                                        height: fit-content; */
+                                                            height: fit-content; */
             background-color: #5c6370;
             border-radius: 0.8em;
             overflow: hidden;

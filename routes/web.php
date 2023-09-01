@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Sigra\SigraController;
@@ -21,5 +22,9 @@ Route::get('/', function () {
 // dokumentasi sigra
 Route::get('/sigra/index', [SigraController::class, 'index'])->name('sigra.index');
 
-// dashboard
+// dashboard utama
 Route::get('/dashboard', [DashboardController::class, 'home'])->name('dashboard.index');
+Route::get('/dashboard/image', [DashboardController::class, 'showImage'])->name('dashboard.show.image');
+
+// admin panel
+Route::get('/dashboard-admin/card', [AdminController::class, 'card'])->name('dashboard.show.card');
