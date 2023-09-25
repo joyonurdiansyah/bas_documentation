@@ -19,12 +19,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// dokumentasi sigra
-Route::get('/sigra/index', [SigraController::class, 'index'])->name('sigra.index');
 
 // dashboard utama
 Route::get('/dashboard', [DashboardController::class, 'home'])->name('dashboard.index');
 Route::get('/dashboard/image', [DashboardController::class, 'showImage'])->name('dashboard.show.image');
 
-// admin panel
+
+// admin panel card
 Route::get('/dashboard-admin/card', [AdminController::class, 'card'])->name('dashboard.show.card');
+// post card
+Route::post('/dashboard-admin/store-card', [AdminController::class, 'storeCard'])->name('dashboard.store.card');
+// catch response dokumentasi card
+Route::get('/dashboard-admin/get-all-card', [AdminController::class, 'dataDokumen'])->name('dashboard.all.dokumentasi');
+// catch name judul dokumentasi card from object
+Route::get('/dashboard-admin/get-single-card', [AdminController::class, 'cariDokumen'])->name('dashboard.cari.dokumen');
+
+// admin panel dashboard
+Route::get('/dashboard-admin/dashboard-utama', [AdminController::class, 'dashboard'])->name('dashboard.table');
+// admin post content dashboard
+Route::get('/dashboard-admin/detail/{id}', [AdminController::class, 'detail'])->name('dashboard.post.detail');
+// admin post store langkah
+Route::post('/dashboard-admin/store-post', [AdminController::class, 'createLangkah'])->name('dashboard.store.langkah');
+// admin store sub langkah
+Route::post('/dashboard-admin/sub-langkah', [AdminController::class, 'createSubLangkah'])->name('dashboard.store.sublangkah');
+// admin delete sub langkah id
+Route::post('/dashboard-admin/sub-langkah-deleted', [AdminController::class, 'deleteSubLangkah'])->name('dashboard.delete.sublangkah');
+// admin delete langkah
+Route::post('/dashboard-admin/langkah-deleted', [AdminController::class, 'deleteLangkah'])->name('dashboard.delete.langkah');
+
+// dokumentasi sigra
+Route::get('/{slug}', [SigraController::class, 'index'])->name('sigra.index');

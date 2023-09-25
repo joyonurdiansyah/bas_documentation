@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Sigra;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Dokumentasi;
 
 class SigraController extends Controller
 {
-    public function index()
+    public function index($slug)
     {
-        return view('pages.sigra');
+        $data = Dokumentasi::where('link_web', $slug)->first();
+        return view('pages.detail', compact('data'));
     }
 }

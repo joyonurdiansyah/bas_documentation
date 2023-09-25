@@ -10,6 +10,8 @@ class DashboardController extends Controller
 {
     public function home()
     {
-        return view('pages.dashboard');
+        $data = Dokumentasi::all();
+
+        return view('pages.dashboard', compact('data'));
     }
 }

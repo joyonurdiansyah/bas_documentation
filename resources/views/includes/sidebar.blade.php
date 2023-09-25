@@ -7,22 +7,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-                    <label for="tutorial">Guide Sigra Sistem</label>
+                    <label for="tutorial">Guide {{ $data->judul }}</label>
                     <li class="nav-item">
                         <a class="nav-link" href="#opening"></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#step_1">Langkah 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#step_2">Langkah 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#step_3">Langkah 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#step_4">Langkah 4</a>
-                    </li>
+                    @foreach ($data->langkah as $item)
+                        <li class="nav-item">
+                            <a class="nav-link" href="#step_{{ $item->urutan }}">Langkah {{ $item->urutan }}</a>
+                        </li>
+                    @endforeach
                     <!-- <li class="nav-item">
                     <a class="nav-link" href="#step_5">Langkah 5</a>
                 </li>

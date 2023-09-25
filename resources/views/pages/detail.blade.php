@@ -8,19 +8,15 @@
     <div id="content-wrapper">
         <!-- opening -->
         <section id="opening" class="full-height px-lg-5">
-
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-6">
-                        <h1 class="display-4 fw-bold" data-aos="fade-up">WELCOME TO <span class="text-brand">SIGRA
-                                SYSTEM</span> AT PRAKARSA ALAM SEGAR</h1>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">Sigra merupakan sistem
-                            pembuatan surat izin operasional yang meliputi perizinan dan pembuatan sertifikasi terkait
-                            perizinan yang dibuat.</p>
+                        <h1 class="display-4 fw-bold" data-aos="fade-up">WELCOME TO <span
+                                class="text-brand">{{ $data->judul }}</span> AT PRAKARSA ALAM SEGAR</h1>
+                        <div class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">{!! $data->deskripsi !!}</div>
                         <div data-aos="fade-up" data-aos-delay="600">
-                            <a href="http://172.21.5.105/" class="btn btn-brand me-3">sudah paham, lanjut ke web
-                                Sigra!</a>
-                            <a href="#step_1" class="link-custom">klik melanjutkan tutorial</a>
+                            <a href="http://172.21.5.105/" class="btn btn-brand me-3">Sudah paham, lanjut ke web Sigra!</a>
+                            <a href="#step_1" class="link-custom">Klik melanjutkan tutorial</a>
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
@@ -31,65 +27,70 @@
                     </div>
                 </div>
             </div>
-
         </section>
+
         <!-- //opening -->
 
-        <!-- step 1 -->
-        <section id="step_1" class="full-height px-lg-5">
-            <div class="container">
+        @foreach ($data->langkah as $item)
+            <!-- step 1 -->
+            <section id="step_{{ $item->urutan }}" class="full-height px-lg-5">
+                <div class="container">
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h6 class="text-brand">Langkah pertama lakukan login</h6>
-                        <h1>Halaman Login dan Home</h1>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-12" data-aos="fade-up">
-                        <div class="row pb-4" data-aos="fade-up">
-                            <div class="col-lg-8">
-                                <h6 class="text-brand">Halaman Login</h6>
-                            </div>
+                    {{-- <div class="row pb-4" data-aos="fade-up">
+                        <div class="col-lg-8">
+                            <h6 class="text-brand">Langkah pertama lakukan login</h6>
+                            <h1>Halaman Login dan Home</h1>
                         </div>
-                        <div class="card-custom rounded-4 bg-base shadow-effect">
-                            <div class="card-custom-image rounded-4">
-                                <img class="rounded-4" src="{{ asset('templates/assets/images/login sigra.png') }} "
-                                    alt="">
+                    </div> --}}
+                    <div class="row justify-content-center">
+                        @foreach ($item->subLangkah as $_item)
+                            <div class="col-md-12 mb-5" data-aos="fade-up">
+                                <div class="row pb-4" data-aos="fade-up">
+                                    <div class="col-lg-8">
+                                        <h6 class="text-brand">Halaman {{ $_item->judul }}</h6>
+                                    </div>
+                                </div>
+                                <div class="card-custom rounded-4 bg-base shadow-effect">
+                                    <div class="card-custom-image rounded-4">
+                                        <img class="rounded-4" src="{{ asset('templates/assets/images/login sigra.png') }} "
+                                            alt="">
+                                    </div>
+                                    <div class="card-custom-content p-4">
+                                        <h4>1.{{ $loop->iteration }} Halaman {{ $_item->judul }}</h4>
+                                        <p>{{ $_item->keterangan }}</p>
+                                        @if ($_item->link_web != null)
+                                            <a href="" class="link-custom">Lihat Halaman</a>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-custom-content p-4">
-                                <h4>1. Halaman Login</h4>
-                                <p>masuk ke halaman login dengan memasukkan nik dan password yang sudah diberikan oleh
-                                    tim GA</p>
-                                <a href="http://172.21.5.105/" class="link-custom">login sigra</a>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
 
-                    <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="row pb-4" data-aos="fade-up">
-                            <div class="col-lg-8">
-                                <h6 class="text-brand">Halaman Menu</h6>
+                        {{-- <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="row pb-4" data-aos="fade-up">
+                                <div class="col-lg-8">
+                                    <h6 class="text-brand">Halaman Menu</h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-custom rounded-4 bg-base shadow-effect">
-                            <div class="card-custom-image rounded-4">
-                                <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
-                                    alt="">
+                            <div class="card-custom rounded-4 bg-base shadow-effect">
+                                <div class="card-custom-image rounded-4">
+                                    <img class="rounded-4" src="{{ asset('templates/assets/images/menu sigra.png') }}"
+                                        alt="">
+                                </div>
+                                <div class="card-custom-content p-4">
+                                    <h4>1.1 Halaman Menu Sigra</h4>
+                                    <p>Masuk ke halaman menu sigra dan pada pilihan option menu sigra, pilih sesuai dengan
+                                        jenis nya</p>
+                                </div>
                             </div>
-                            <div class="card-custom-content p-4">
-                                <h4>1.1 Halaman Menu Sigra</h4>
-                                <p>Masuk ke halaman menu sigra dan pada pilihan option menu sigra, pilih sesuai dengan
-                                    jenis nya</p>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
-                </div>
-        </section>
+            </section>
+        @endforeach
 
 
         <!-- step_2 -->
-        <section id="step_2" class="full-height px-lg-5">
+        {{-- <section id="step_2" class="full-height px-lg-5">
             <div class="container">
 
                 <div class="row pb-4" data-aos="fade-up">
@@ -388,7 +389,7 @@
 
 
             </div>
-        </section>
+        </section> --}}
 
         <!-- CONTACT -->
         <section id="contact" class="full-height px-lg-5">

@@ -12,7 +12,7 @@
                             <a class="nav-link" href="#opening"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#step_1">Dashboard</a>
+                            <a class="nav-link" href="{{ url('/dashboard-admin/dashboard-utama') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#step_2">Post</a>
