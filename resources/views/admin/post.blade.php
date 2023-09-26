@@ -1,7 +1,7 @@
 @extends('layouts.app-admin')
 
 {{-- set title --}}
-@section('title', 'card')
+@section('title', 'post')
 
 @push('after-style')
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
@@ -23,6 +23,16 @@
 
     <!-- Section 2 -->
     <div id="content-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="container mt-4">
+            <div class="row-gy-4">
+                <div class="col-md-12">
+                    <p><a href="{{ url('/dashboard-admin/dashboard-utama') }}">Dashboard</a> > Create POST</p>
+                    <div class="title mb-4">
+                        <h1>Create POST</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Section 1 -->
         <section id="docs_keterangan" class="mt-4">
             <div class="container">
@@ -109,11 +119,11 @@
                                                                         <td>{{ $_item->id }}</td>
                                                                         <td>
                                                                             <img src="{{ asset($_item->foto) }}"
-                                                                                alt="Foto" width="100"
-                                                                                style="max-width: 100%;">
+                                                                                alt="Foto" width="80"
+                                                                                style="max-width: 80%;">
                                                                         </td>
-                                                                        <td>{{ $_item->judul }}</td>
-                                                                        <td>{{ $_item->keterangan }}</td>
+                                                                        <td class="col-md-2">{{ $_item->judul }}</td>
+                                                                        <td class="col-md-2">{{ $_item->keterangan }}</td>
                                                                         <td>
                                                                             <button type="button"
                                                                                 class="btn btn-danger ml-2 ml-n2 buat-sublangkah-btn"
@@ -141,7 +151,7 @@
         </section>
     </div>
 
-    <div class="modal" id="langkahModal">
+    <div class="modal fade" id="langkahModal" tabindex="-1" aria-labelledby="langkahModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -174,7 +184,8 @@
         </div>
     </div>
 
-    <div class="modal" id="sublangkahModal">
+    <div class="modal fade" id="sublangkahModal" tabindex="-1" aria-labelledby="sublangkahModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -185,7 +196,7 @@
                     <form id="sublangkahForm" action="{{ route('dashboard.store.sublangkah') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
-                        <input type="" name="id_langkah" id="id_langkah">
+                        <input type="hidden" name="id_langkah" id="id_langkah">
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
                             <input type="text" class="form-control" id="judul" name="judul" required>
@@ -214,7 +225,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="{{ route('dashboard.delete.sublangkah') }}" method="post">
-                    <input type="text" name="id_sub_langkah" id="id-sub-langkah">
+                    <input type="hidden" name="id_sub_langkah" id="id-sub-langkah">
                     <div class="modal-header">
                         <h5 class="modal-title" id="deleteSublangkahModalLabel">Konfirmasi Penghapusan</h5>
                         <button type="button" class="btn-close" data-dismiss="modal"></button>
@@ -238,7 +249,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="{{ route('dashboard.delete.langkah') }}" method="post">
-                    <input type="text" name="id_langkah_card" id="id_langkah_card">
+                    <input type="hidden" name="id_langkah_card" id="id_langkah_card">
                     <div class="modal-header">
                         <h5 class="modal-title" id="deleteLangkahModalLabel">Konfirmasi Penghapusan</h5>
                         <button type="button" class="btn-close" data-dismiss="modal"></button>
@@ -355,6 +366,13 @@
                     }
                 });
             });
+
+            $(document).ready(function() {
+                $('#langkahModal, #sublangkahModal').on('show.bs.modal', function() {
+                    $(this).addClass('fade');
+                });
+            });
+
         });
     </script>
 @endpush

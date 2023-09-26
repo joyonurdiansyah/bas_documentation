@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ asset('templates/assets/css/aos.css') }}">
 <link rel="stylesheet" href="{{ asset('templates/assets/css/line-awesome.min.css') }}">
 <link rel="stylesheet" href="{{ asset('templates/assets/css/style.css') }}">
+
+{{-- venobox css --}}
+<link rel="stylesheet" href="{{ asset('templates/VenoBox-master/dist/venobox.css') }}">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 {{-- //property style sigra --}}
 

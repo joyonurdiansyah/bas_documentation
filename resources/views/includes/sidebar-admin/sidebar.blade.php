@@ -14,14 +14,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/dashboard-admin/dashboard-utama') }}">Dashboard</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#step_2">Post</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ url('/dashboard-admin/card') }}">Card</a>
                         </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="#step_4">Faq</a>
+                        </li> --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="#step_4">Author</a>
+                            <a class="nav-link" href="#step_5">Author</a>
                         </li>
                         <!-- <li class="nav-item">
                         <a class="nav-link" href="#step_5">Langkah 5</a>

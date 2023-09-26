@@ -6,6 +6,7 @@
 @push('after-style')
     {{-- venobox image view --}}
     <link rel="stylesheet" href="venobox/venobox.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
     <style>
         .inputBox_container {
             display: flex;
@@ -14,7 +15,7 @@
             max-width: 30rem;
             /* Ubah max-width sesuai kebutuhan */
             /* width: fit-content;
-                        height: fit-content; */
+                                                                                                                                                                                    height: fit-content; */
             background-color: #5c6370;
             border-radius: 0.8em;
             overflow: hidden;
@@ -39,12 +40,54 @@
         ::placeholder {
             color: #abb2bf;
         }
+
+        /* animasi fade in / fade out card */
+        .card-fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .card-fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+            opacity: 1;
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 180%;
+            z-index: -1;
+            /* Ini akan menjadikan elemen di belakang elemen lainnya */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 @endpush
 
 @section('content')
 
     <section id="step_1" class="full-height px-lg-5">
+        <div id="particles-js"></div>
         <div class=" text-center" data-aos="fade-up" data-aos-delay="300">
             <h1>Cari User Manual Anda Disini</h1>
         </div>
@@ -60,7 +103,7 @@
                         </path>
                     </svg>
                     <input class="inputBox" id="searchInput" type="text" class="form-control"
-                        placeholder="Cari berdasarkan nama dokumentasi" aria-label="Search">
+                        placeholder="Cari berdasarkan nama user manual" aria-label="Search">
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -78,6 +121,7 @@
 
 @push('after-script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -98,7 +142,7 @@
                                 <div class="card-custom-content p-3">
                                     <h4>${dokumen.judul}</h4>
                                     <p>${dokumen.deskripsi}</p>
-                                    <a href="${dokumen.link_web}" class="link-custom">Baca Dokumentasi</a>
+                                    <a href="${dokumen.link_web}" class="link-custom">Baca User Manual</a>
                                 </div>
                             </div>
                         </div>
@@ -132,13 +176,129 @@
                         const cardTitleText = cardTitle.textContent.toLowerCase();
 
                         if (cardTitleText.includes(searchTerm)) {
+                            card.classList.add('card-fade-in');
                             card.style.display = 'block';
                         } else {
-                            card.style.display = 'none';
+                            card.classList.add('card-fade-out');
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                                card.classList.remove('card-fade-out');
+                            }, 500);
                         }
                     }
                 });
             });
         }
+    </script>
+    {{-- particle js --}}
+    <script>
+        $(document).ready(function() {
+            // Inisialisasi efek Particle.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffffff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        });
     </script>
 @endpush

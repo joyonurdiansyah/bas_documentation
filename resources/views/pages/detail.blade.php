@@ -3,6 +3,12 @@
 {{-- set title --}}
 @section('title', 'sigra')
 
+@push('after-style')
+    <style>
+
+    </style>
+@endpush
+
 @section('content')
     <!-- CONTENT WRAPPER -->
     <div id="content-wrapper">
@@ -21,7 +27,7 @@
                     </div>
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-custom-image laptop-sigra">
-                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup sigra.png') }}"
+                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
                                 alt="laptop-sigra">
                         </div>
                     </div>

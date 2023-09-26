@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-12">
-                        <p>Dashboard > Table Dokumentasi</p>
+                        <p><a href="{{ url('/dashboard-admin/dashboard-utama') }}">Dashboard</a> > Table User Manual</p>
                         <div class="card">
                             <div class="card-body">
                                 <div class="p-4">
@@ -88,11 +88,11 @@
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th class="col-md-1">ID</th>
-                                                <th class="col-md-4">Foto</th>
+                                                <th class="col-md-2">Foto</th>
                                                 <th class="col-md-2">Judul</th>
                                                 <th class="col-md-4">deskripsi</th>
                                                 <th class="col-md-2">slug</th>
-                                                <th class="col-md-2">Action</th>
+                                                <th class="col-md-4">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -129,7 +129,7 @@
                             return '<a href="' + data +
                                 '" class="venobox" data-gall="myGallery" data-max-width="600"><img src="' +
                                 data +
-                                '" onclick="closeOverlay(this);" class="clickable-image" /></a>';
+                                '" class="clickable-image" /></a>';
                         }
                     },
                     {
@@ -144,15 +144,22 @@
                     {
                         data: 'id',
                         render: function(data, type, row) {
-                            return '<a class="btn btn-sm btn-primary" href="{{ url('dashboard-admin/detail') }}/' +
+                            return '<a class="btn btn-sm btn-info text-white mb-2 mx-2" href="{{ url('dashboard-admin/detail') }}/' +
                                 data +
-                                '"><i class="fas fa-eye"></i></a>'
+                                '"><div class="d-flex flex-column align-items-center"><i class="far fa-file"></i> <span class="small">Detail</span></div></a>' +
+                                '<a class="btn btn-sm btn-warning text-white mx-2" href="{{ url('/dashboard-admin/faq/') }}/' +
+                                data +
+                                '"><div class="d-flex flex-column align-items-center"><i class="fas fa-question"></i> <span class="small">FAQ</span></div></a>';
                         }
                     }
                 ]
             });
 
-            // tambah function close venobox
+            // Inisiasi VenoBox untuk gambar
+            new VenoBox({
+                selector: '.venobox',
+                overlayClose: true,
+            });
         });
     </script>
 @endpush

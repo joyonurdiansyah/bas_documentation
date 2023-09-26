@@ -28,3 +28,7 @@
 
 {{-- toastr --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+{{-- venobox script --}}
+<script src="{{ asset('templates/VenoBox-master/dist/venobox.js') }}"></script>

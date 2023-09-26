@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dokumentasi;
+use App\Faq;
 use App\Langkah;
 use App\SubLangkah;
 use Illuminate\Support\Facades\Redirect;
@@ -107,6 +108,7 @@ class AdminController extends Controller
         return view('admin.post', compact('dataDokumen', 'data', 'dataId'));
     }
 
+
     public function createLangkah(Request $request)
     {
         $langkah = new Langkah;
@@ -167,6 +169,53 @@ class AdminController extends Controller
             session()->flash('success', 'sublangkah berhasil dihapus.');
         } else {
             session()->flash('error', 'gagal menghapus sub langkah.');
+        }
+
+        return Redirect::back();
+    }
+
+    public function detailFaq($id)
+    {
+        $data = Dokumentasi::find($id);
+
+        $dataDokumen = [
+            'foto' => asset($data->foto),
+        ];
+
+        $faqId = $data->id;
+
+        return view('admin.create-faq', compact('dataDokumen', 'data', 'faqId'));
+    }
+
+    public function storeFaq(Request $request)
+    {
+        $fotoPath = $request->file('files')[0]->move('dokumentasi/faq/', time() . '.' . $request->file('files')[0]->getClientOriginalExtension());
+
+        $faq = new Faq();
+        $faq->id_docs = $request->id_docs;
+        $faq->question = $request->question;
+        $faq->answer = $request->answer;
+        $faq->foto = $fotoPath;
+
+        if ($faq->save()) {
+            return response()->json(['success' => 1, 'message' => 'subLangkah berhasil disimpan.']);
+        } else {
+            return response()->json(['success' => 0, 'message' => 'Terjadi kesalahan saat menyimpan data.']);
+        }
+    }
+
+    // deleteFaq
+    public function deleteFaq(Request $request)
+    {
+        $idfaqCard = $request->id_faq;
+
+        // Cari data Langkah berdasarkan ID dan hapus
+        $result = Faq::where('id', $idfaqCard)->delete();
+
+        if ($result) {
+            session()->flash('success', 'Langkah berhasil dihapus.');
+        } else {
+            session()->flash('error', 'gagal menghapus langkah.');
         }
 
         return Redirect::back();

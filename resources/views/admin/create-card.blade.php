@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-12">
-                        <p>Dashboard > Create Card</p>
+                        <p> <a href="{{ url('/dashboard-admin/dashboard-utama') }}">Dashboard</a> > Create Card</p>
                         <div class="title mb-4">
                             <h1>Create Card</h1>
                         </div>
