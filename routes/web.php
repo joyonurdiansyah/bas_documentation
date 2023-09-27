@@ -52,8 +52,11 @@ Route::get('/dashboard-admin/faq/{id}', [AdminController::class, 'detailFaq'])->
 Route::post('/dashboard-admin/store-faq', [AdminController::class, 'storeFaq'])->name('dashboard.store.faq');
 // faq deleted
 Route::post('/dashboard-admin/deleted-faq', [AdminController::class, 'deleteFaq'])->name('dashboard.delete.faq');
+// cetak user manual
+Route::get('/dashboard-admin/cetak-user-manual/{id}', [AdminController::class, 'cetakPdfManual']);
 
-
+// testing pdf
+Route::get('/dashboard-admin/view/pdf/{id}', [AdminController::class, 'view_pdf']);
 
 
 

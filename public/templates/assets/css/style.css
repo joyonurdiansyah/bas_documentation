@@ -110,6 +110,9 @@ img {
     #content-wrapper {
         padding-left: var(--sidbar-width);
     }
+    #footer-wrapper {
+        padding-left: var(--sidbar-width);
+    }
 }
 
 /* BTN */
@@ -209,7 +212,7 @@ img {
 } */
 
 /* rocket */
-.rocket, .laptop-sigra {
+.rocket, .laptop-sigra, .fotodocs {
     animation: rocketAnimation 2s infinite alternate;
 }
 

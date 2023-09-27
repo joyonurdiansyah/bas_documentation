@@ -1,5 +1,5 @@
     <!-- FOOTER -->
-    <div id="content-wrapper">
+    <div id="footer-wrapper">
         <footer class="py-5 px-lg-5">
             <div class="container">
                 <div class="row gy-4 justify-content-between">

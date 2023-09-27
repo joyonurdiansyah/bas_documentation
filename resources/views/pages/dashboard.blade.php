@@ -14,8 +14,7 @@
             flex-direction: row;
             max-width: 30rem;
             /* Ubah max-width sesuai kebutuhan */
-            /* width: fit-content;
-                                                                                                                                                                                    height: fit-content; */
+            /* width: fit-content;                                                                                                                                                                   height: fit-content; */
             background-color: #5c6370;
             border-radius: 0.8em;
             overflow: hidden;

@@ -8,6 +8,8 @@ use App\Dokumentasi;
 use App\Faq;
 use App\Langkah;
 use App\SubLangkah;
+use PDF;
+
 use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
@@ -220,4 +222,40 @@ class AdminController extends Controller
 
         return Redirect::back();
     }
+
+
+    public function view_pdf($id)
+    {
+        // Mengambil data dari database berdasarkan id
+        $data = Dokumentasi::find($id);
+
+        // Mengecek apakah data ditemukan
+        if (!$data) {
+            return redirect()->back()->with('error', 'Data tidak ditemukan.');
+        }
+
+        // Menginisialisasi objek MPDF
+        $mpdf = new \Mpdf\Mpdf();
+
+        // Mengirim data ke view dan menambahkannya ke PDF
+        $mpdf->WriteHTML(view('user-manual-print.test', compact('data')));
+
+        // Menampilkan PDF
+        $mpdf->Output();
+    }
+
+
+    // public function cetakPdfManual($id)
+    // {
+    //     $data = Dokumentasi::find($id);
+
+    //     if ($data) {
+    //         $pdf = PDF::loadView('user-manual-print.test', ['data' => $data]);
+    //         return $pdf->download('laporan-pegawai.pdf');
+    //     } else {
+    //         return redirect()->back()->with('error', 'Data tidak ditemukan.');
+    //     }
+
+    //     return view('user-manual-print.test', compact('data'));
+    // }
 }
