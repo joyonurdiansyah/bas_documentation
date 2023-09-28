@@ -91,20 +91,20 @@
                 <section id="step_{{ $item->urutan }}" class="full-height px-lg-5">
                     <div class="container">
                         <div class="row justify-content-center">
+                            <div class="row pb-4" data-aos="fade-up">
+                                <div class="col-lg-8">
+                                    <h6 class="text-brand">Langkah {{ $item->urutan }}</h6>
+                                </div>
+                            </div>
                             @foreach ($item->subLangkah as $_item)
                                 <div class="col-md-12 mb-5" data-aos="fade-up">
-                                    <div class="row pb-4" data-aos="fade-up">
-                                        <div class="col-lg-8">
-                                            <h6 class="text-brand">Halaman {{ $_item->judul }}</h6>
-                                        </div>
-                                    </div>
                                     <div class="card-custom rounded-4 bg-base shadow-effect">
                                         <div class="card-custom-image rounded-4">
                                             <img class="rounded-4"
                                                 src="{{ asset('langkah/post/'. $_item->foto) }}" alt="Foto langkah">
                                         </div>
                                         <div class="card-custom-content p-4">
-                                            <h4>1.{{ $loop->iteration }} Halaman {{ $_item->judul }}</h4>
+                                            <h4>1.{{ $loop->iteration }} {{ $_item->judul }}</h4>
                                             <p>{{ $_item->keterangan }}</p>
                                             @if ($_item->link_web != null)
                                                 <a href="" class="link-custom">Lihat Halaman</a>
