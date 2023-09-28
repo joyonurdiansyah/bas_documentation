@@ -132,13 +132,14 @@ class AdminController extends Controller
 
     public function createSubLangkah(Request $request)
     {
-        $fotoPath = $request->file('files')[0]->move('langkah/post/', time() . '.' . $request->file('files')[0]->getClientOriginalExtension());
+        $fotoName = time() . '.' . $request->file('files')[0]->getClientOriginalExtension();
+        $fotoPath = $request->file('files')[0]->move('langkah/post/', $fotoName);
 
         $subLangkah = new SubLangkah;
         $subLangkah->id_langkah = $request->id_langkah;
         $subLangkah->judul = $request->judul;
         $subLangkah->keterangan = $request->keterangan;
-        $subLangkah->foto = $fotoPath;
+        $subLangkah->foto = $fotoName;
 
         if ($subLangkah->save()) {
             return response()->json(['success' => 1, 'message' => 'subLangkah berhasil disimpan.']);
