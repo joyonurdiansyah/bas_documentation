@@ -38,7 +38,7 @@
             /* Change to the hover color */
         }
 
-        #full-height {
+        .full-height {
             padding-top: 20px !important;
             padding-bottom: 20px !important
         }
