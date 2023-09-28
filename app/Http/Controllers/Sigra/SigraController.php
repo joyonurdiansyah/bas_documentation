@@ -10,7 +10,7 @@ class SigraController extends Controller
 {
     public function index($slug)
     {
-        $data = Dokumentasi::where('link_web', $slug)->first();
+        $data = Dokumentasi::where('slug', $slug)->first();
         return view('pages.detail', compact('data'));
     }
 }
