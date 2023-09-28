@@ -96,7 +96,7 @@
                                     <h6 class="text-brand">Langkah {{ $item->urutan }}</h6>
                                 </div>
                             </div>
-                            @foreach ($item->subLangkah as $_item)
+                            @foreach ($item->subLangkah->sortBy('created_at') as $_item)
                                 <div class="col-md-12 mb-5" data-aos="fade-up">
                                     <div class="card-custom rounded-4 bg-base shadow-effect">
                                         <div class="card-custom-image rounded-4">
