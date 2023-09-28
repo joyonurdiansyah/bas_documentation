@@ -60,6 +60,7 @@ class AdminController extends Controller
                 // tambahkan asset
                 'foto' => asset($dokumen->foto),
                 'link_web' => $dokumen->link_web,
+                'slug' => $dokumen->slug
             ];
 
             $combinedData[] = $dataDokumen;
