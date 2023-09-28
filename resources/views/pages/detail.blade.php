@@ -58,8 +58,10 @@
                                 class="text-brand">{{ $data->judul }}</span></h1>
                         <div class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">{!! $data->deskripsi !!}</div>
                         <div data-aos="fade-up" class="action-button-container" data-aos-delay="600">
-                            <a href="http://172.21.5.105/" class="btn btn-brand me-3">Sudah paham, lanjut ke web Sigra!</a>
-                            <a href="#step_1" class="link-custom">Klik melanjutkan tutorial</a>
+                            <a href="{{ $data->link_web }}" class="btn btn-brand me-3">Buka Aplikasi</a>
+                            @if($data->langkah->first() != null)
+                                <a href="#step_{{ $data->langkah->first()->urutan }}" class="link-custom">Lanjut baca user manual</a>
+                            @endif    
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
