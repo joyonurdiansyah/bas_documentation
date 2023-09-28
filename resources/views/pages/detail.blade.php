@@ -37,6 +37,11 @@
             background-color: #0056b3;
             /* Change to the hover color */
         }
+
+        #full-height {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important
+        }
     </style>
 @endpush
 
