@@ -54,8 +54,8 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-6">
-                        <h1 class="display-4 fw-bold" data-aos="fade-up">WELCOME TO <span
-                                class="text-brand">{{ $data->judul }}</span> AT PRAKARSA ALAM SEGAR</h1>
+                        <h1 class="display-4 fw-bold" data-aos="fade-up">User Manual <span
+                                class="text-brand">{{ $data->judul }}</span></h1>
                         <div class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">{!! $data->deskripsi !!}</div>
                         <div data-aos="fade-up" class="action-button-container" data-aos-delay="600">
                             <a href="http://172.21.5.105/" class="btn btn-brand me-3">Sudah paham, lanjut ke web Sigra!</a>
