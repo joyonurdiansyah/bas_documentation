@@ -15,9 +15,7 @@ use App\Http\Controllers\Sigra\SigraController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'home']);
 
 
 // dashboard utama
