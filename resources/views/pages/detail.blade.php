@@ -311,4 +311,40 @@
             });
         });
     </script>
+
+<script>
+  window.addEventListener('beforeprint', function() {
+    const divToCheck = document.querySelector('.full-height'); // Ganti dengan selektor Anda
+    const parent = divToCheck.parentElement;
+    const clone = divToCheck.cloneNode(true);
+
+    parent.removeChild(divToCheck); // Hapus elemen asli
+
+    let currentPage = 1;
+    const pages = [clone]; // Array untuk menyimpan elemen-elemen yang akan dicetak
+
+    function addPage() {
+      const newPage = clone.cloneNode(true);
+      pages.push(newPage);
+    }
+
+    // Fungsi untuk mencetak semua halaman
+    function printAllPages() {
+      pages.forEach(page => {
+        parent.appendChild(page);
+        window.print();
+        parent.removeChild(page);
+      });
+    }
+
+    // Cek apakah elemen terpotong
+    if (divToCheck.offsetHeight > window.innerHeight) {
+      // Jika terpotong, tambahkan halaman baru
+      addPage();
+    }
+
+    // Mencetak semua halaman yang sudah dipersiapkan
+    printAllPages();
+  });
+</script>
 @endpush
