@@ -31,6 +31,8 @@ class AdminController extends Controller
             $dokumen->deskripsi = $request->deskripsi;
             $dokumen->foto = $fotoPath;
 
+            $dokumen->slug = str_replace(' ', '-', strtolower($request->judul));
+
             // 
             $dokumen->link_web = $request->link_web;
 

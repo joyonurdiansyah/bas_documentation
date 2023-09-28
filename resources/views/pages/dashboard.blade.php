@@ -141,7 +141,7 @@
                                 <div class="card-custom-content p-3">
                                     <h4>${dokumen.judul}</h4>
                                     <p>${dokumen.deskripsi}</p>
-                                    <a href="${dokumen.link_web}" class="link-custom">Baca User Manual</a>
+                                    <a href="{{ url('user-manual') }}/${dokumen.slug}" class="link-custom">Baca User Manual</a>
                                 </div>
                             </div>
                         </div>
