@@ -246,7 +246,7 @@
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="full-height px-lg-5">
+        <!-- <section id="contact" class="full-height px-lg-5">
             <div class="container">
 
                 <div class="row justify-content-center text-center">
@@ -282,7 +282,7 @@
 
 
             </div>
-        </section>
+        </section> -->
         <!-- //CONTACT -->
     </div>
 @endsection
