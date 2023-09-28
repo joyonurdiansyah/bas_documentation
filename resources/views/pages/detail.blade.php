@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="card-custom-content p-4">
                                             <h4>1.{{ $loop->iteration }} {{ $_item->judul }}</h4>
-                                            <p>{{ $_item->keterangan }}</p>
+                                            <p>{!! $_item->keterangan !!}</p>
                                             @if ($_item->link_web != null)
                                                 <a href="" class="link-custom">Lihat Halaman</a>
                                             @endif

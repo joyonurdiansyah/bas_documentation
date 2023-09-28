@@ -15,6 +15,7 @@
             position: relative;
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/tinymce@6.7.0/skins/ui/oxide/content.min.css" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -186,7 +187,7 @@
 
     <div class="modal fade" id="sublangkahModal" tabindex="-1" aria-labelledby="sublangkahModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">PESAN DARI BANGJOY</h4>
@@ -203,7 +204,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label">Keterangan</label>
-                            <textarea class="form-control" id="keterangan" name="keterangan" rows="3" required></textarea>
+                            <textarea class="form-control" style="display: none" id="keterangan" name="keterangan" rows="3" required></textarea>
+                            <div id="keterangan-tinymce"></div>
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label">Foto</label>
@@ -275,6 +277,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.7.0/tinymce.min.js"></script>
+
+    <script>
+        tinymce.init({
+            selector: '#keterangan-tinymce',
+            menubar: false,
+            setup: function(editor) {
+                editor.on('change', function(e) {
+                    editor.save();
+
+                    // Get value and store to #keterangan
+                    var keterangan = editor.getContent();
+                    $('#keterangan').val(keterangan);
+                });
+            },
+            // Smaller height
+            height: 250,
+        })
+        
+        // 
+    </script>
+
     <script>
         $(document).ready(function() {
             $("#buatButton").click(function() {
