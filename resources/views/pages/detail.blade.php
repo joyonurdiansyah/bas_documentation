@@ -101,7 +101,7 @@
                                     <div class="card-custom rounded-4 bg-base shadow-effect">
                                         <div class="card-custom-image rounded-4">
                                             <img class="rounded-4"
-                                                src="{{ asset('templates/assets/images/login sigra.png') }}" alt="">
+                                                src="{{ asset('langkah/post/'. $_item->foto) }}" alt="Foto langkah">
                                         </div>
                                         <div class="card-custom-content p-4">
                                             <h4>1.{{ $loop->iteration }} Halaman {{ $_item->judul }}</h4>
