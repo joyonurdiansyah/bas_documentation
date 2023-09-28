@@ -64,12 +64,18 @@
                     </div>
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-custom-image laptop-sigra">
+                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}" alt="laptop-sigra">
+                            <div style="position: absolute; top: 0; left: 15%; top: 7%; bottom: 40%; right: 16%; z-index: 9; background-color: #000">
+                                <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 100%; height: 100%">
+                            </div>
+                        </div>
+                        <!-- <div class="card-custom-image laptop-sigra">
                             <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
                                 alt="laptop-sigra">
                             <div style="position: absolute; top: 0; left: 14.6%; top: 7%; z-index: 9;">
                                 <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 85%; height: 7.3cm;">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
