@@ -3,7 +3,7 @@
 
 <head>
     @include('includes.meta')
-    <title>@yield('title') | Documentasi PT BUMI ALAM SEGAR</title>
+    <title>@yield('title') | User Manual My PAS Online</title>
 
     {{-- favicon --}}
     <link rel="apple-touch-icon" href="">
