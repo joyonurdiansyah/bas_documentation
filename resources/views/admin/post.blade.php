@@ -118,7 +118,7 @@
                                                                     <tr>
                                                                         <td>{{ $_item->id }}</td>
                                                                         <td>
-                                                                            <img src="{{ asset($_item->foto) }}"
+                                                                            <img src="{{ asset('langkah/post/' . $_item->foto) }}"
                                                                                 alt="Foto" width="80"
                                                                                 style="max-width: 80%;">
                                                                         </td>
