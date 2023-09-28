@@ -1,7 +1,7 @@
 @extends('layouts.app-sigra')
 
 {{-- set title --}}
-@section('title', 'sigra')
+@section('title', $data->judul)
 
 @push('after-style')
     <style>
