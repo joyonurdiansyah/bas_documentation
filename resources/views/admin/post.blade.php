@@ -14,6 +14,22 @@
             background-size: cover;
             position: relative;
         }
+
+        .modal-title {
+            color: #14f7a8 !important;
+            font-weight: 600 !important;
+            text-align: center;
+        }
+
+        .modal-body p {
+            color: #040404 !important;
+            font-weight: 400 !important;
+        }
+
+        .modal-body {
+            color: #040404 !important;
+            font-weight: 400 !important;
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/tinymce@6.7.0/skins/ui/oxide/content.min.css" rel="stylesheet">
 @endpush
@@ -173,7 +189,7 @@
                         @csrf
                         <input type="hidden" name="id_docs" value="{{ $data->id }}" />
                         <input type="hidden" name="urutan" value="{{ $urutan }}" />
-                        Apakah anda yakin ingin membuat Langkah?
+                        <p>Apakah anda yakin ingin membuat Langkah?</p>
                     </form>
                 </div>
                 <!-- Modal footer -->
@@ -190,7 +206,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">PESAN DARI BANGJOY</h4>
+                    <h4 class="modal-title">FORM TAMBAH SUBLANGKAH</h4>
                     <button type="button" class="btn-close" data-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -229,7 +245,7 @@
                 <form action="{{ route('dashboard.delete.sublangkah') }}" method="post">
                     <input type="hidden" name="id_sub_langkah" id="id-sub-langkah">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteSublangkahModalLabel">Konfirmasi Penghapusan</h5>
+                        <h5 class="modal-title" id="deleteSublangkahModalLabel">KONFIRMASI PENGHAPUSAN</h5>
                         <button type="button" class="btn-close" data-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
@@ -253,7 +269,7 @@
                 <form action="{{ route('dashboard.delete.langkah') }}" method="post">
                     <input type="hidden" name="id_langkah_card" id="id_langkah_card">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteLangkahModalLabel">Konfirmasi Penghapusan</h5>
+                        <h5 class="modal-title" id="deleteLangkahModalLabel">KONFIRMASI PENGHAPUSAN</h5>
                         <button type="button" class="btn-close" data-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
@@ -295,7 +311,7 @@
             // Smaller height
             height: 250,
         })
-        
+
         // 
     </script>
 

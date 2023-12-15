@@ -14,6 +14,22 @@
             background-size: cover;
             position: relative;
         }
+
+        .modal-title {
+            color: #14f7a8 !important;
+            font-weight: 600 !important;
+            text-align: center;
+        }
+
+        .modal-body p {
+            color: #040404 !important;
+            font-weight: 400 !important;
+        }
+
+        .modal-body {
+            color: #040404 !important;
+            font-weight: 400 !important;
+        }
     </style>
 @endpush
 

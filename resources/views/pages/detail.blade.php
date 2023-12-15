@@ -64,25 +64,28 @@
                         <div class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">{!! $data->deskripsi !!}</div>
                         <div data-aos="fade-up" class="action-button-container" data-aos-delay="600">
                             <a href="{{ $data->link_web }}" class="btn btn-brand me-3">Buka Aplikasi</a>
-                            @if($data->langkah->first() != null)
-                                <a href="#step_{{ $data->langkah->first()->urutan }}" class="link-custom">Lanjut baca user manual</a>
-                            @endif    
+                            @if ($data->langkah->first() != null)
+                                <a href="#step_{{ $data->langkah->first()->urutan }}" class="link-custom">Lanjut baca user
+                                    manual</a>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-custom-image laptop-sigra">
-                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}" alt="laptop-sigra">
-                            <div style="position: absolute; top: 0; left: 15%; top: 7%; bottom: 40%; right: 16%; z-index: 9; background-color: #000">
+                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
+                                alt="laptop-sigra">
+                            <div
+                                style="position: absolute; top: 0; left: 15%; top: 7%; bottom: 40%; right: 16%; z-index: 9; background-color: #000">
                                 <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 100%; height: 100%">
                             </div>
                         </div>
                         <!-- <div class="card-custom-image laptop-sigra">
-                            <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
-                                alt="laptop-sigra">
-                            <div style="position: absolute; top: 0; left: 14.6%; top: 7%; z-index: 9;">
-                                <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 85%; height: 7.3cm;">
-                            </div>
-                        </div> -->
+                                        <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
+                                            alt="laptop-sigra">
+                                        <div style="position: absolute; top: 0; left: 14.6%; top: 7%; z-index: 9;">
+                                            <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 85%; height: 7.3cm;">
+                                        </div>
+                                    </div> -->
                     </div>
                 </div>
             </div>
@@ -105,8 +108,8 @@
                                 <div class="col-md-12 mb-5" data-aos="fade-up">
                                     <div class="card-custom rounded-4 bg-base shadow-effect">
                                         <div class="card-custom-image rounded-4">
-                                            <img class="rounded-4"
-                                                src="{{ asset('langkah/post/'. $_item->foto) }}" alt="Foto langkah">
+                                            <img class="rounded-4" src="{{ asset('langkah/post/' . $_item->foto) }}"
+                                                alt="Foto langkah">
                                         </div>
                                         <div class="card-custom-content p-4">
                                             <h4>1.{{ $loop->iteration }} {{ $_item->judul }}</h4>
@@ -240,7 +243,7 @@
 
 
                                     </div>
-                                </div>
+                                </div>  
                             </div>
                         </div> --}}
                     @endforeach
@@ -252,42 +255,42 @@
 
         <!-- CONTACT -->
         <!-- <section id="contact" class="full-height px-lg-5">
-            <div class="container">
+                        <div class="container">
 
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-8 pb-4" data-aos="fade-up">
-                        <h6 class="text-brand">Masih bingung?</h6>
-                        <h1>Silahkan Ajukan pertanyaan
-                        </h1>
-                    </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-8 pb-4" data-aos="fade-up">
+                                    <h6 class="text-brand">Masih bingung?</h6>
+                                    <h1>Silahkan Ajukan pertanyaan
+                                    </h1>
+                                </div>
 
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                        <form action="#" class="row g-lg-3 gy-3">
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="masukkan nik anda">
+                                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+                                    <form action="#" class="row g-lg-3 gy-3">
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" placeholder="masukkan nik anda">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" placeholder="masukkan nama anda">
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <input type="text" class="form-control" placeholder="masukkan departemen">
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <input type="text" class="form-control" placeholder="masukkan pertanyaan anda">
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <textarea name="" rows="4" class="form-control" placeholder="detail pertanyaan"></textarea>
+                                        </div>
+                                        <div class="form-group col-12 d-grid">
+                                            <button type="submit" class="btn btn-brand">Kirim Pertanyaan</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="masukkan nama anda">
-                            </div>
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" placeholder="masukkan departemen">
-                            </div>
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" placeholder="masukkan pertanyaan anda">
-                            </div>
-                            <div class="form-group col-12">
-                                <textarea name="" rows="4" class="form-control" placeholder="detail pertanyaan"></textarea>
-                            </div>
-                            <div class="form-group col-12 d-grid">
-                                <button type="submit" class="btn btn-brand">Kirim Pertanyaan</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
 
 
-            </div>
-        </section> -->
+                        </div>
+                    </section> -->
         <!-- //CONTACT -->
     </div>
 @endsection
@@ -312,39 +315,39 @@
         });
     </script>
 
-<script>
-  window.addEventListener('beforeprint', function() {
-    const divToCheck = document.querySelector('.full-height'); // Ganti dengan selektor Anda
-    const parent = divToCheck.parentElement;
-    const clone = divToCheck.cloneNode(true);
+    <script>
+        window.addEventListener('beforeprint', function() {
+            const divToCheck = document.querySelector('.full-height'); // Ganti dengan selektor Anda
+            const parent = divToCheck.parentElement;
+            const clone = divToCheck.cloneNode(true);
 
-    parent.removeChild(divToCheck); // Hapus elemen asli
+            parent.removeChild(divToCheck); // Hapus elemen asli
 
-    let currentPage = 1;
-    const pages = [clone]; // Array untuk menyimpan elemen-elemen yang akan dicetak
+            let currentPage = 1;
+            const pages = [clone]; // Array untuk menyimpan elemen-elemen yang akan dicetak
 
-    function addPage() {
-      const newPage = clone.cloneNode(true);
-      pages.push(newPage);
-    }
+            function addPage() {
+                const newPage = clone.cloneNode(true);
+                pages.push(newPage);
+            }
 
-    // Fungsi untuk mencetak semua halaman
-    function printAllPages() {
-      pages.forEach(page => {
-        parent.appendChild(page);
-        window.print();
-        parent.removeChild(page);
-      });
-    }
+            // Fungsi untuk mencetak semua halaman
+            function printAllPages() {
+                pages.forEach(page => {
+                    parent.appendChild(page);
+                    window.print();
+                    parent.removeChild(page);
+                });
+            }
 
-    // Cek apakah elemen terpotong
-    if (divToCheck.offsetHeight > window.innerHeight) {
-      // Jika terpotong, tambahkan halaman baru
-      addPage();
-    }
+            // Cek apakah elemen terpotong
+            if (divToCheck.offsetHeight > window.innerHeight) {
+                // Jika terpotong, tambahkan halaman baru
+                addPage();
+            }
 
-    // Mencetak semua halaman yang sudah dipersiapkan
-    printAllPages();
-  });
-</script>
+            // Mencetak semua halaman yang sudah dipersiapkan
+            printAllPages();
+        });
+    </script>
 @endpush
