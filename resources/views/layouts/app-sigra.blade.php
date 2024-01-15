@@ -50,7 +50,7 @@
     </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
 
     @include('includes.sidebar')
     @yield('content')
@@ -61,6 +61,16 @@
     @include('includes.script')
 
     @stack('after-script')
+
 </body>
+
+
+<script>
+    $(document).ready(function() {
+        $('body').scrollspy({
+            target: '#navbarNav'
+        });
+    });
+</script>
 
 </html>

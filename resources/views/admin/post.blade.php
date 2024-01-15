@@ -220,7 +220,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label">Keterangan</label>
-                            <textarea class="form-control" style="display: none" id="keterangan" name="keterangan" rows="3" required></textarea>
+                            <textarea class="form-control" style="" id="keterangan" name="keterangan" rows="3" required></textarea>
                             <div id="keterangan-tinymce"></div>
                         </div>
                         <div class="mb-3">
@@ -312,7 +312,7 @@
             height: 250,
         })
 
-        // 
+        //
     </script>
 
     <script>

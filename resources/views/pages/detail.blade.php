@@ -47,15 +47,13 @@
 
 @section('content')
     <!-- CONTENT WRAPPER -->
-    <div onClick="window.print()" id="scrollToTopButton" class="btn-scroll-top">
-        <a href="" class="btn btn-brand btn-lg">
-            <i class="fas fa-file-pdf"></i> Cetak User Manual
-        </a>
+    <div id="scrollToTopButton" class="btn-scroll-top">
+        <button type="button" id="btn_cetak" class="btn btn-brand btn-lg">Cetak User Manual</button>
     </div>
 
     <div id="content-wrapper">
         <!-- opening -->
-        <section id="opening" class="full-height px-lg-5">
+        <section id="opening" class="full-height px-lg-5 langkah">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-6">
@@ -80,12 +78,12 @@
                             </div>
                         </div>
                         <!-- <div class="card-custom-image laptop-sigra">
-                                        <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
-                                            alt="laptop-sigra">
-                                        <div style="position: absolute; top: 0; left: 14.6%; top: 7%; z-index: 9;">
-                                            <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 85%; height: 7.3cm;">
-                                        </div>
-                                    </div> -->
+                                                                                                                                                                                                                                                                <img class="mockup-sigra" src="{{ asset('templates/assets/images/mockup-user-manual.png') }}"
+                                                                                                                                                                                                                                                                    alt="laptop-sigra">
+                                                                                                                                                                                                                                                                <div style="position: absolute; top: 0; left: 14.6%; top: 7%; z-index: 9;">
+                                                                                                                                                                                                                                                                    <img src="{{ asset($data->foto) }}" alt="Foto" style="width: 85%; height: 7.3cm;">
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                            </div> -->
                     </div>
                 </div>
             </div>
@@ -96,7 +94,7 @@
             {{-- mencegah pembuatan section baru jika loop iteration adalah null --}}
             @if ($item->subLangkah->isNotEmpty())
                 <!-- step 1 -->
-                <section id="step_{{ $item->urutan }}" class="full-height px-lg-5">
+                <section id="step_{{ $item->urutan }}" class="full-height px-lg-5 langkah">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="row pb-4" data-aos="fade-up">
@@ -129,7 +127,7 @@
 
 
         <!-- faq -->
-        <section id="faq" class="full-height px-lg-5">
+        <section id="faq" class="full-height px-lg-5 langkah">
             <div class="container" data-aos="fade-up">
                 <h1 class="text-center p-4 mb-4">Tanya Jawab (FAQ)</h1>
                 <div class="accordion" id="accordionExample">
@@ -243,7 +241,7 @@
 
 
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </div> --}}
                     @endforeach
@@ -255,42 +253,42 @@
 
         <!-- CONTACT -->
         <!-- <section id="contact" class="full-height px-lg-5">
-                        <div class="container">
+                                                                                                                                                                                                                                                <div class="container">
 
-                            <div class="row justify-content-center text-center">
-                                <div class="col-lg-8 pb-4" data-aos="fade-up">
-                                    <h6 class="text-brand">Masih bingung?</h6>
-                                    <h1>Silahkan Ajukan pertanyaan
-                                    </h1>
-                                </div>
+                                                                                                                                                                                                                                                    <div class="row justify-content-center text-center">
+                                                                                                                                                                                                                                                        <div class="col-lg-8 pb-4" data-aos="fade-up">
+                                                                                                                                                                                                                                                            <h6 class="text-brand">Masih bingung?</h6>
+                                                                                                                                                                                                                                                            <h1>Silahkan Ajukan pertanyaan
+                                                                                                                                                                                                                                                            </h1>
+                                                                                                                                                                                                                                                        </div>
 
-                                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                                    <form action="#" class="row g-lg-3 gy-3">
-                                        <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" placeholder="masukkan nik anda">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" placeholder="masukkan nama anda">
-                                        </div>
-                                        <div class="form-group col-12">
-                                            <input type="text" class="form-control" placeholder="masukkan departemen">
-                                        </div>
-                                        <div class="form-group col-12">
-                                            <input type="text" class="form-control" placeholder="masukkan pertanyaan anda">
-                                        </div>
-                                        <div class="form-group col-12">
-                                            <textarea name="" rows="4" class="form-control" placeholder="detail pertanyaan"></textarea>
-                                        </div>
-                                        <div class="form-group col-12 d-grid">
-                                            <button type="submit" class="btn btn-brand">Kirim Pertanyaan</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                                                                                                                                                                                                                                                        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+                                                                                                                                                                                                                                                            <form action="#" class="row g-lg-3 gy-3">
+                                                                                                                                                                                                                                                                <div class="form-group col-md-6">
+                                                                                                                                                                                                                                                                    <input type="text" class="form-control" placeholder="masukkan nik anda">
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div class="form-group col-md-6">
+                                                                                                                                                                                                                                                                    <input type="text" class="form-control" placeholder="masukkan nama anda">
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div class="form-group col-12">
+                                                                                                                                                                                                                                                                    <input type="text" class="form-control" placeholder="masukkan departemen">
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div class="form-group col-12">
+                                                                                                                                                                                                                                                                    <input type="text" class="form-control" placeholder="masukkan pertanyaan anda">
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div class="form-group col-12">
+                                                                                                                                                                                                                                                                    <textarea name="" rows="4" class="form-control" placeholder="detail pertanyaan"></textarea>
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                <div class="form-group col-12 d-grid">
+                                                                                                                                                                                                                                                                    <button type="submit" class="btn btn-brand">Kirim Pertanyaan</button>
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                            </form>
+                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                    </div>
 
 
-                        </div>
-                    </section> -->
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </section> -->
         <!-- //CONTACT -->
     </div>
 @endsection
@@ -350,4 +348,22 @@
             printAllPages();
         });
     </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    @php
+        $slug = $data->slug; // Misalnya, mengambil nilai judul dari data PHP
+    @endphp
+    <script>
+        var slug = '<?= $slug ?>'
+        $(document).ready(function() {
+            $('#btn_cetak').on('click', function() {
+                window.open(`http://127.0.0.1:8000/pdf/cetakan/${slug}`,
+                    '_blank')
+            })
+        });
+    </script>
+
+
 @endpush

@@ -46,7 +46,7 @@ Route::post('/dashboard-admin/sub-langkah-deleted', [AdminController::class, 'de
 Route::post('/dashboard-admin/langkah-deleted', [AdminController::class, 'deleteLangkah'])->name('dashboard.delete.langkah');
 // get page admin faq
 Route::get('/dashboard-admin/faq/{id}', [AdminController::class, 'detailFaq'])->name('dashboard.faq');
-// store faq 
+// store faq
 Route::post('/dashboard-admin/store-faq', [AdminController::class, 'storeFaq'])->name('dashboard.store.faq');
 // faq deleted
 Route::post('/dashboard-admin/deleted-faq', [AdminController::class, 'deleteFaq'])->name('dashboard.delete.faq');
@@ -60,3 +60,5 @@ Route::get('/dashboard-admin/view/pdf/{id}', [AdminController::class, 'view_pdf'
 
 // dokumentasi sigra
 Route::get('/{slug}', [SigraController::class, 'index'])->name('sigra.index');
+// cetakan sigra
+Route::get('/pdf/cetakan/{slug}', [SigraController::class, 'pdf'])->name('sigra.pdf');

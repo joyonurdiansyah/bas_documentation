@@ -21,9 +21,11 @@ class AdminController extends Controller
 
     public function storeCard(Request $request)
     {
-        if ($request->hasFile('files')) {
+        if ($request->hasFile('foto')) {
             // Store the file in the storage/app/public/thumbnail/card directory0
-            $fotoPath = $request->file('files')[0]->move('thumbnail/card/', time() . '.' . $request->file('files')[0]->getClientOriginalExtension());
+            // $fotoPath = $request->file('foto')[0]->store('thumbnail/card/', time() . '.' . $request->file('foto')[0]->getClientOriginalExtension());
+            $fotoPath['files'] = $request->file('$fotoPath')->store('thumbnail/card/', time() . '.' . $request->file('foto')[0]->getClientOriginalExtension());
+
 
             // Create a new Dokumentasi instance with the data
             $dokumen = new Dokumentasi;
@@ -33,7 +35,7 @@ class AdminController extends Controller
 
             $dokumen->slug = str_replace(' ', '-', strtolower($request->judul));
 
-            // 
+            //
             $dokumen->link_web = $request->link_web;
 
             // Save the data to the database
